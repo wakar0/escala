@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tickets - Escala</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+</head>
+<body style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh;" class="employee-view">
+    <div class="header">
+        <div class="header-title">
+            <h2>Escala - My Tickets</h2>
+        </div>
+        <div class="user-info">
+            <span id="userGreeting">Welcome back!</span>
+            <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="nav-menu">
+            <a href="employee-dashboard.html">Dashboard</a>
+            <a href="employee-create-ticket.html">Create New Ticket</a>
+        </div>
+        
+        <div class="content-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3>My Tickets</h3>
+                <input type="text" id="searchTickets" placeholder="Search tickets..." style="padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #e0e0e0; width: 250px;">
+            </div>
+            <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="open">Open</button>
+                <button class="filter-btn" data-filter="in-progress">In Progress</button>
+                <button class="filter-btn" data-filter="resolved">Resolved</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Subject</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Created Date</th>
+                        <th>SLA Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="6" style="text-align: center; color: #888; padding: 40px;">No tickets found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="employee-tickets.js"></script>
+</body>
+</html>

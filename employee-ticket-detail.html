@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Details - Escala</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+</head>
+<body style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh;" class="employee-view">
+    <div class="header">
+        <div class="header-title">
+            <h2>Escala - Ticket Details <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 8px 16px; border-radius: 8px; font-size: 18px; margin-left: 15px; letter-spacing: 1px;" id="ticketIdHeader">#000</span></h2>
+        </div>
+        <div class="user-info">
+            <span id="userGreeting">Welcome back!</span>
+            <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="nav-menu">
+            <a href="employee-dashboard.html">Dashboard</a>
+            <a href="employee-tickets.html">My Tickets</a>
+        </div>
+        
+        <div class="ticket-detail">
+            <h3>📋 Ticket Information</h3>
+            <div class="detail-row">
+                <label>Ticket ID:</label>
+                <span>#001</span>
+            </div>
+            <div class="detail-row">
+                <label>Subject:</label>
+                <span>Laptop not starting</span>
+            </div>
+            <div class="detail-row">
+                <label>Description:</label>
+                <span>My laptop is not starting after the latest update. Power button lights up but screen remains black.</span>
+            </div>
+            <div class="detail-row">
+                <label>Priority:</label>
+                <span class="priority-high">High</span>
+            </div>
+            <div class="detail-row">
+                <label>Status:</label>
+                <span class="status-progress">In Progress</span>
+            </div>
+            <div class="detail-row">
+                <label>Created Date:</label>
+                <span>2024-01-15 10:30 AM</span>
+            </div>
+            <div class="detail-row">
+                <label>SLA Status:</label>
+                <span class="sla-ok">Within SLA (4 hours remaining)</span>
+            </div>
+        </div>
+        
+        <div id="ratingSection" style="display: none;">
+            <div class="content-box">
+                <h3>Rate This Ticket</h3>
+                <div style="text-align: center; padding: 20px;">
+                    <div class="star-rating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                    <p style="color: #888; margin-top: 10px;">Click to rate your experience</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h3>💬 Admin Comments & Updates</h3>
+            <div class="detail-row">
+                <span>No comments yet</span>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <a href="employee-tickets.html" class="btn-secondary">Back to My Tickets</a>
+        </div>
+    </div>
+    <script src="employee-ticket-detail.js"></script>
+</body>
+</html>

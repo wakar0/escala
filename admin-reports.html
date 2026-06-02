@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Escala</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+</head>
+<body style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh;" class="admin-view">
+    <div class="header">
+        <div class="header-left">
+            <div class="logo-badge admin-badge">
+                <svg class="logo-svg" viewBox="0 0 50 50" width="32" height="32">
+                    <path d="M25 5 L45 15 L45 35 L25 45 L5 35 L5 15 Z" fill="none" stroke="white" stroke-width="2.5"/>
+                    <text x="25" y="32" text-anchor="middle" fill="white" font-size="20" font-weight="bold">E</text>
+                </svg>
+            </div>
+            <div class="header-info">
+                <h2 class="header-brand">ESCALA</h2>
+                <p class="header-subtitle">Admin Control Panel</p>
+            </div>
+        </div>
+        <div class="user-info">
+            <button class="btn-secondary" onclick="window.location.href='admin-dashboard.html'">← Back to Dashboard</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="nav-menu">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="admin-tickets.html">All Tickets</a>
+            <a href="admin-sla-breaches.html">SLA Breaches</a>
+            <a href="admin-reports.html">Reports</a>
+        </div>
+        
+        <div class="content-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3>Ticket Statistics</h3>
+                <button class="btn-primary" onclick="exportReport()" style="padding: 10px 20px;">Export Report</button>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h4>Tickets by Status</h4>
+                <table>
+                    <tr>
+                        <td>Open</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>In Progress</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Resolved</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Closed</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h4>Tickets by Priority</h4>
+                <table>
+                    <tr>
+                        <td>Low</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>High</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Critical</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h4>SLA Performance</h4>
+                <table>
+                    <tr>
+                        <td>SLA Compliance Rate</td>
+                        <td style="color: #28a745; font-weight: bold;">0%</td>
+                    </tr>
+                    <tr>
+                        <td>Average Resolution Time</td>
+                        <td>0 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Total SLA Breaches</td>
+                        <td style="color: #dc3545; font-weight: bold;">0</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h4>Average Resolution Time by Priority</h4>
+                <table id="resolutionByPriority">
+                    <tr>
+                        <td>Low</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>High</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Critical</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <h4>Average Resolution Time by Category</h4>
+                <table id="resolutionByCategory">
+                    <tr>
+                        <td>Hardware</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Software</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Network</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Access</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="admin-reports.js"></script>
+</body>
+</html>

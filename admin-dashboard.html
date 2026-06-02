@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Escala</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+</head>
+<body style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh;" class="admin-view">
+    <div class="header">
+        <div class="header-left">
+            <div class="logo-badge admin-badge">
+                <svg class="logo-svg" viewBox="0 0 50 50" width="32" height="32">
+                    <path d="M25 5 L45 15 L45 35 L25 45 L5 35 L5 15 Z" fill="none" stroke="white" stroke-width="2.5"/>
+                    <text x="25" y="32" text-anchor="middle" fill="white" font-size="20" font-weight="bold">E</text>
+                </svg>
+            </div>
+            <div class="header-info">
+                <h2 class="header-brand">ESCALA</h2>
+                <p class="header-subtitle">Admin Control Panel</p>
+            </div>
+        </div>
+        <div class="user-info">
+            <div class="user-profile" id="userProfileBtn" onclick="toggleProfileDropdown()" style="cursor: pointer;">
+                <div class="user-avatar admin-avatar">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="user-details">
+                    <span class="user-greeting" id="adminGreeting">Administrator</span>
+                    <span class="user-role">System Admin</span>
+                </div>
+                <span class="dropdown-arrow">▼</span>
+            </div>
+            
+            <div class="profile-dropdown" id="profileDropdown">
+                <div class="profile-header">
+                    <div class="profile-avatar-large admin-avatar">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="profile-info">
+                        <h3>Administrator</h3>
+                        <p>elayen24@gmail.com</p>
+                        <span class="profile-badge admin-badge-text">System Admin</span>
+                    </div>
+                </div>
+                
+                <div class="profile-section">
+                    <h4>📊 Performance Statistics</h4>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Active Tickets</span>
+                            <span class="stat-value" id="adminStatActive">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">SLA Breaches</span>
+                            <span class="stat-value" id="adminStatBreaches">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Escalated</span>
+                            <span class="stat-value" id="adminStatEscalated">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Compliance</span>
+                            <span class="stat-value" id="adminStatCompliance">100%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-section">
+                    <h4>⚡ Quick Actions</h4>
+                    <div class="profile-actions">
+                        <a href="admin-tickets.html" class="profile-action-btn">
+                            <span>🎫</span>
+                            <span>All Tickets</span>
+                        </a>
+                        <a href="admin-sla-breaches.html" class="profile-action-btn">
+                            <span>⚠️</span>
+                            <span>SLA Breaches</span>
+                        </a>
+                        <a href="admin-reports.html" class="profile-action-btn">
+                            <span>📊</span>
+                            <span>Reports</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="profile-footer">
+                    <button class="profile-logout-btn" onclick="window.location.href='index.html'">
+                        <span>🚪</span>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="nav-menu">
+            <a href="admin-tickets.html">All Tickets</a>
+            <a href="admin-sla-breaches.html">SLA Breaches</a>
+            <a href="admin-reports.html">Reports</a>
+        </div>
+        
+        <div class="cards">
+            <div class="card card-total">
+                <h3>Total Tickets</h3>
+                <div class="number">0</div>
+            </div>
+            <div class="card card-open">
+                <h3>Open Tickets</h3>
+                <div class="number">0</div>
+            </div>
+            <div class="card card-breach">
+                <h3>SLA Breaches</h3>
+                <div class="number" style="color: #ff6b6b;">0</div>
+            </div>
+            <div class="card card-escalated">
+                <h3>Escalated Tickets</h3>
+                <div class="number" style="color: #ffd93d;">0</div>
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h3>Recent Activity</h3>
+            <table>
+                <tr>
+                    <td colspan="2" style="text-align: center; color: #888; padding: 40px;">No recent activity</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

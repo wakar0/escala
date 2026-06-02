@@ -1,0 +1,18 @@
+# Ignore sensitive configuration
+supabase-config.js
+
+# Ignore session and temporary files
+SESSION-SAVE.md
+INTEGRATION-STATUS.md
+READY-TO-TEST.md
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

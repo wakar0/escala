@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLA Breaches - Escala</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+</head>
+<body style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh;" class="admin-view">
+    <div class="header">
+        <div class="header-title">
+            <h2>Escala - SLA Breaches</h2>
+        </div>
+        <div class="user-info">
+            <span id="adminGreeting">Administrator</span>
+            <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="nav-menu">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="admin-tickets.html">All Tickets</a>
+            <a href="admin-users.html">Manage Users</a>
+            <a href="admin-reports.html">Reports</a>
+        </div>
+        
+        <div class="content-box">
+            <h3>SLA Breached Tickets</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Employee</th>
+                        <th>Subject</th>
+                        <th>Priority</th>
+                        <th>Time Overdue</th>
+                        <th>Escalation Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="6" style="text-align: center; color: #888; padding: 40px;">No SLA breaches found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="admin-sla-breaches.js"></script>
+</body>
+</html>
